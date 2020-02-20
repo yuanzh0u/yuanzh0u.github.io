@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuanzh0u.github.io</id>
     <title>yuanZh0u</title>
-    <updated>2020-02-20T08:34:20.153Z</updated>
+    <updated>2020-02-20T10:50:22.202Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuanzh0u.github.io"/>
     <link rel="self" href="https://yuanzh0u.github.io/atom.xml"/>
@@ -11,18 +11,54 @@
     <icon>https://yuanzh0u.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, yuanZh0u</rights>
     <entry>
-        <title type="html"><![CDATA[Day#2 Modify Electron Initial Setup]]></title>
+        <title type="html"><![CDATA[Day#2 Modify Electron Initial Setup for Vue.js Development]]></title>
         <id>https://yuanzh0u.github.io/post/day2-modify-electron-initial-setup/</id>
         <link href="https://yuanzh0u.github.io/post/day2-modify-electron-initial-setup/">
         </link>
         <updated>2020-02-20T08:12:59.000Z</updated>
         <content type="html"><![CDATA[<h2 id="remove-the-menu-bar">Remove the Menu Bar</h2>
 <p>When the project is setup by the <code>electron-builder</code> (a vue plugin), the initial settings of the electron window layout was put into the <code>background.js</code> at the root of the project folder.<br>
-The main window of the app is given to an object named <code>win</code> at <code>line 19</code> by declearing an instance of BrowserWindow.</p>
-<pre><code class="language-javascript">win = new BrowserWindow({ width: 800, height: 600, webPreferences: {
-    nodeIntegration: true
-  } })
+The main window of the app is given to an object named <code>win</code> at <code>line 19</code> by declearing an instance of BrowserWindow in the function of <code>createWindow(){}</code>.</p>
+<pre><code class="language-javascript">function createWindow() { 
+    win = new BrowserWindow({ width: 800, height: 600, webPreferences: {
+        nodeIntegration: true
+    } })
 </code></pre>
+<p>where <code>width</code> and <code>height</code> are the size of the window to be rendered, <code>webPreferences</code> is an object that most of the interactive properties of the window are setup.<br>
+The line 23 to line 31 is a <code>if</code> statement that will decide where to load and how to render the window during the development mode and build mode.<br>
+During the development mode, the dev tool float window will be opened just like in a chrome browser.<br>
+Between line 21 and 23, we will add a line to disable the system menu bar from the window, so that we will add a more OS consistent menu bar in our app.</p>
+<pre><code class="language-javascript">win.setMenu(null);
+</code></pre>
+<h2 id="add-vue-dev-tools-to-the-dev-tools-of-electron">Add Vue Dev-tools to the dev-tools of Electron</h2>
+<p>The vue dev-tools is an chromium plugin which gives more structral and intuitive insight of the vue.js framework rather than other dev-tools consoles with plain javascript. Go to the root folder of the project in the terminal and type the following command to install the vue-devtools package to the <code>node_modules</code></p>
+<pre><code class="language-shell">npm install vue-devtools --save-dev
+</code></pre>
+<p>and some scripts also need to be added to the <code>background.js</code> so that when the main window is rendered, the vue-devtools will be installed to the dev-tools of the chromium.<br>
+The scripts will be add to the callback function in <code>add.on('ready', function(){})</code> as follows:</p>
+<pre><code class="language-javascript">app.on('ready', async () =&gt; {
+  if (isDevelopment &amp;&amp; !process.env.IS_TEST) {
+    // Install Vue Devtools
+    // Devtools extensions are broken in Electron 6.0.0 and greater
+    // See https://github.com/nklayman/vue-cli-plugin-electron-builder/issues/378 for more info
+    // Electron will not launch with Devtools extensions installed on Windows 10 with dark mode
+    // If you are not using Windows 10 dark mode, you may uncomment these lines
+    // In addition, if the linked issue is closed, you can upgrade electron and uncomment these lines
+    // try {
+    //   await installVueDevtools()
+    // } catch (e) {
+    //   console.error('Vue Devtools failed to install:', e.toString())
+    // }
+  }
+  // new code start --&gt;
+  if (process.env.NODE_ENV !== 'production') {
+    BrowserWindow.addDevToolsExtension('node_modules/vue-devtools/vender')
+  }
+  // new code ends &lt;--
+  createWindow()
+})
+</code></pre>
+<p>Then use command <code>npm run electron:serve</code> at the root folder of the project in the terminal. After the codes are compiled successfully, a window will popup with vue-devtools in the dev-tools section.</p>
 ]]></content>
     </entry>
     <entry>
