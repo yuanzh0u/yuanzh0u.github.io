@@ -1,45 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuanzh0u.github.io</id>
-    <title>Gridea</title>
-    <updated>2020-02-19T13:46:29.306Z</updated>
+    <title>yuanZh0u</title>
+    <updated>2020-02-20T02:10:51.794Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuanzh0u.github.io"/>
     <link rel="self" href="https://yuanzh0u.github.io/atom.xml"/>
     <subtitle>温故而知新</subtitle>
     <logo>https://yuanzh0u.github.io/images/avatar.png</logo>
     <icon>https://yuanzh0u.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, Gridea</rights>
+    <rights>All rights reserved 2020, yuanZh0u</rights>
     <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://yuanzh0u.github.io/post/hello-gridea/</id>
-        <link href="https://yuanzh0u.github.io/post/hello-gridea/">
+        <title type="html"><![CDATA[Day#1 electron_vue installation]]></title>
+        <id>https://yuanzh0u.github.io/post/day1-electron_vue-installation/</id>
+        <link href="https://yuanzh0u.github.io/post/day1-electron_vue-installation/">
         </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+        <updated>2020-02-19T13:50:34.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="install-nodejs">install node.js</h2>
+<p>Go to the Node.js <a href="https://nodejs.org/en/download/">download</a> page. Download and Install the Current(Latest Features) 13.6.0 with npm (v.6.13.4). During the installation, select options such as <code>Node.js runtime</code>, <code>npm package manager</code>, <code>Add to PATH</code></p>
+<h2 id="install-vue-cli-3">install vue cli 3</h2>
+<p>Install vue cli 3 with a terminal console. cd to the root folder of the project and type the command...</p>
+<pre><code class="language-terminal">npm install -g @vue/cli
+</code></pre>
+<p>By which will install the source files of vue to the system, and ect.</p>
+<h2 id="create-a-new-project">create a new project</h2>
+<p>To create a new project underthe root folder of the project, type the command in a terminal console...</p>
+<pre><code>vue create [project name]
+</code></pre>
+<p>and select the following options when asking...</p>
+<pre><code>? Please pick a preset: {Manually select features}
+? Check the features needed for your project: {Babel, Router, Vuex, Linter}
+? Use history mode for router? (Requires proper server setup for index fallback in production) {Yes}
+? Pick a linter / formatter config: {Basic}
+? Pick additional lint features: (Press &lt;space&gt; to select, &lt;a&gt; to toggle all, &lt;i&gt; to invert selection {Lint on save}
+? Where do you prefer placing config for Babel, ESLint, etc.? { In dedicated config files}
+? Save this as a preset for future projects? {No}
+</code></pre>
+<h2 id="install-electron-support">Install electron support</h2>
+<p>CD to the project folder in the terminal console, and type the command...</p>
+<pre><code>vue add electron-builder
+</code></pre>
+<p>When asking the version of electron to install, select the newest one.<br>
+After the vue-cli-plugin-electron-builder is successfully installed, you could type <code>npm run electron:serve</code> to render the electron app in dev-mode, and type <code>npm run electron:build</code> to build and publish the electron app.</p>
 ]]></content>
     </entry>
 </feed>

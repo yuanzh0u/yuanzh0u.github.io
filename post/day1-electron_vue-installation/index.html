@@ -1,10 +1,11 @@
 
+<!DOCTYPE html>
 <html>
   <head>
     
 <meta charset="utf-8" >
 
-<title>yuanZh0u</title>
+<title>Day#1 electron_vue installation | yuanZh0u</title>
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -77,32 +78,48 @@
 
 
       <div class="content-container">
-        
-        
-<section class="post-item">
-    <div class="content">
-      <a href="https://yuanzh0u.github.io/post/day1-electron_vue-installation/">
-        <h2 class="post-title">Day#1 electron_vue installation</h2>
-      </a>
-      <div class="post-abstract">
+        <div class="post-detail">
+          
+          <h2 class="post-title">Day#1 electron_vue installation</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2020-02-19</span>
+            
+          </div>
+          <div class="post-content">
+            <h2 id="install-nodejs">install node.js</h2>
+<p>Go to the Node.js <a href="https://nodejs.org/en/download/">download</a> page. Download and Install the Current(Latest Features) 13.6.0 with npm (v.6.13.4). During the installation, select options such as <code>Node.js runtime</code>, <code>npm package manager</code>, <code>Add to PATH</code></p>
+<h2 id="install-vue-cli-3">install vue cli 3</h2>
+<p>Install vue cli 3 with a terminal console. cd to the root folder of the project and type the command...</p>
+<pre><code class="language-terminal">npm install -g @vue/cli
+</code></pre>
+<p>By which will install the source files of vue to the system, and ect.</p>
+<h2 id="create-a-new-project">create a new project</h2>
+<p>To create a new project underthe root folder of the project, type the command in a terminal console...</p>
+<pre><code>vue create [project name]
+</code></pre>
+<p>and select the following options when asking...</p>
+<pre><code>? Please pick a preset: {Manually select features}
+? Check the features needed for your project: {Babel, Router, Vuex, Linter}
+? Use history mode for router? (Requires proper server setup for index fallback in production) {Yes}
+? Pick a linter / formatter config: {Basic}
+? Pick additional lint features: (Press &lt;space&gt; to select, &lt;a&gt; to toggle all, &lt;i&gt; to invert selection {Lint on save}
+? Where do you prefer placing config for Babel, ESLint, etc.? { In dedicated config files}
+? Save this as a preset for future projects? {No}
+</code></pre>
+<h2 id="install-electron-support">Install electron support</h2>
+<p>CD to the project folder in the terminal console, and type the command...</p>
+<pre><code>vue add electron-builder
+</code></pre>
+<p>When asking the version of electron to install, select the newest one.<br>
+After the vue-cli-plugin-electron-builder is successfully installed, you could type <code>npm run electron:serve</code> to render the electron app in dev-mode, and type <code>npm run electron:build</code> to build and publish the electron app.</p>
+
+          </div>
+        </div>
+
         
       </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2020-02-19</span>
-        
-      </div>
-    </div>
-    
-  </section>
 
-
-<div class="pagination-container">
-  
-  
-</div>
-
-
-      </div>
+      
 
       <div class="site-footer">
   <div class="slogan">温故而知新</div>
