@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuanzh0u.github.io</id>
     <title>yuanZh0u</title>
-    <updated>2020-02-20T02:35:12.991Z</updated>
+    <updated>2020-02-20T07:34:22.569Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuanzh0u.github.io"/>
     <link rel="self" href="https://yuanzh0u.github.io/atom.xml"/>
@@ -10,6 +10,22 @@
     <logo>https://yuanzh0u.github.io/images/avatar.png</logo>
     <icon>https://yuanzh0u.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, yuanZh0u</rights>
+    <entry>
+        <title type="html"><![CDATA[Tutorial List for Beginners]]></title>
+        <id>https://yuanzh0u.github.io/post/tutorial-list-for-beginners/</id>
+        <link href="https://yuanzh0u.github.io/post/tutorial-list-for-beginners/">
+        </link>
+        <updated>2020-02-20T02:37:21.000Z</updated>
+        <content type="html"><![CDATA[<ol>
+<li>学会一门编程语言之   <a href="https://www.bilibili.com/video/av46230772?from=search&amp;seid=11943480974581181"><code>Javascript基础</code> </a></li>
+<li>了解数据结构是什么   <a href="https://www.bilibili.com/video/av82049466?from=search&amp;seid=11943480974581181"><code>数据结构与算法入门</code></a></li>
+<li>语言的应用进阶篇<a href="https://www.bilibili.com/video/av87391436?from=search&amp;seid=11943480974581181"><code>Python与网络APP及机器学习APP</code></a></li>
+<li>数据库是干什么的<a href="https://www.bilibili.com/video/av47123168?from=search&amp;seid=11943480974581181"><code>初探SQL</code></a></li>
+<li>学习用Node.js进行一次完整的网络APP开发<a href="https://www.bilibili.com/video/av38914382?from=search&amp;seid=11943480974581181"><code>Node.js全教程</code></a></li>
+<li>WebGL三维建模基础库Three.js<a href="https://threejsfundamentals.org/threejs/lessons/threejs-fundamentals.html"><code>Three.js Fundamentals</code></a></li>
+</ol>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Day#1 electron_vue installation]]></title>
         <id>https://yuanzh0u.github.io/post/day1-electron_vue-installation/</id>
