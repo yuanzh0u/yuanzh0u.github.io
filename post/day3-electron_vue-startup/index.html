@@ -1,0 +1,251 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Day#3 electron_vue &amp; vuetify Initial File Structure part 1 | yuanZh0u</title>
+<link rel="shortcut icon" href="https://yuanzh0u.github.io/favicon.ico?v=1582295843349">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://yuanzh0u.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Day#3 electron_vue &amp; vuetify Initial File Structure part 1 | yuanZh0u - Atom Feed" href="https://yuanzh0u.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="
+After the project is initialized by the electron_vue and vuetify, the project folder would be looked like the above pic..." />
+    <meta name="keywords" content="vuetify,electron,vue.js" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://yuanzh0u.github.io">
+  <img class="avatar" src="https://yuanzh0u.github.io/images/avatar.png?v=1582295843349" alt="">
+  </a>
+  <h1 class="site-title">
+    yuanZh0u
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Day#3 electron_vue &amp; vuetify Initial File Structure part 1
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-02-21
+              </span>
+              <span>
+                5 min read
+              </span>
+              
+                <a href="https://yuanzh0u.github.io/tag/ueqES5e1z/" class="post-tag">
+                  # vuetify
+                </a>
+              
+                <a href="https://yuanzh0u.github.io/tag/KCKteB6s5/" class="post-tag">
+                  # electron
+                </a>
+              
+                <a href="https://yuanzh0u.github.io/tag/BT6k8bpeN4/" class="post-tag">
+                  # vue.js
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p><img src="https://raw.githubusercontent.com/yuanzh0u/Imgbed_picgo/master/20200221153559.png" alt="initial file structure after electron_vue is setup" loading="lazy"><br>
+After the project is initialized by the electron_vue and vuetify, the project folder would be looked like the above picture. Everthing you need for coding is store in the folder named <code>src</code> as short for &quot;source code&quot;. The rest files and folders are used for compiling and buiding stuff, which will be discussed later.<br>
+<img src="https://raw.githubusercontent.com/yuanzh0u/Imgbed_picgo/master/20200221161119.png" alt="" loading="lazy"><br>
+In the folder <code>scr</code>, <code>electron_vue</code> and <code>vuetify</code> have already created several files and folders for you. They seems intimidating. But don't worry. Once you get the gist of the <code>electron a nd vue</code> framework, you will understand that they are only there to do some dirty underground construction work for you and help you to keep your codes clean.<br>
+So here is the basic story line:</p>
+<h2 id="1-backgroundjs">1. <code>background.js</code></h2>
+<p><code>electron_vue</code> created a <code>background.js</code> file by which imports some basic tools from <code>electron</code> to render the app window for you. The main process of the app is run with the <code>background.js</code>. The file basically defines a main window of the app named <code>win</code>, and the actions to take when the app is <code>activate</code>, <code>ready</code> and <code>all the windows are closed</code>.</p>
+<ul>
+<li><code>activate</code> is used only for macOS when the dock icon is clicked and no other windows of app are open.<pre><code class="language-javascript">  app.on('activate', () =&gt; {
+      if (win === null) {
+          createWindow();
+      }
+  })
+</code></pre>
+</li>
+<li><code>ready</code> is when electron has finished initialization and ready to create browser windows.<pre><code class="language-javascript">  app.on('ready', async () =&gt; {
+      if (isDevelopment &amp;&amp; !process.env.IS_TEST) {
+              BrowserWindow.addDevToolsExtension('node_modules/vue-devtools/vender')
+      }
+      createWindow()
+  })
+</code></pre>
+</li>
+<li><code>all the windows are closed</code> is when all the windows of app are closed.<pre><code class="language-javascript">app.on('window-all-closed', () =&gt; {
+      if (process.platform !== 'darwin') {
+          app.quit()
+      }
+  })
+</code></pre>
+</li>
+</ul>
+<p>In addition, both <code>activate</code> and <code>ready</code> actions will call the function <code>createWindow</code>.</p>
+<pre><code class="language-javascript">function createWindow () {
+  win = new BrowserWindow({ width: 800, height: 600, webPreferences: {
+    nodeIntegration: true
+  } })
+  win.setMenu( null );
+  if (process.env.WEBPACK_DEV_SERVER_URL) {
+    // Load the url of the dev server if in development mode
+    win.loadURL(process.env.WEBPACK_DEV_SERVER_URL)
+    if (!process.env.IS_TEST) win.webContents.openDevTools()
+  } else {
+    createProtocol('app')
+    // Load the index.html when not in development
+    win.loadURL('app://./index.html')
+  }
+  win.on('closed', () =&gt; {
+    win = null  
+  })
+}
+</code></pre>
+<p>Basically, this function declears an instance of <code>BrowserWindow</code> to the <code>win</code> as the main window, and setup some properties of this window, such as:</p>
+<ul>
+<li>the <code>width</code> and <code>height</code> when the window is initialized,</li>
+<li>whether to show the dev-tools of the chromium during the development</li>
+<li>whether to used the Node.js resources,</li>
+<li><strong>most important of all</strong>, it links the <code>index.html</code> in the &quot;public&quot; folder as the content of this window by <code>win.loadURL('app://./index.html')</code>.</li>
+</ul>
+<h2 id="2-indexhtml">2. <code>index.html</code></h2>
+<p>The <code>index.html</code> in the &quot;public&quot; folder is the entry point of your electron app. When the app is initialized in the <code>background.js</code>, the <code>creatWindow</code> function will load the <code>index.html</code> in as the content of the app.<br>
+The only important thing in the codes of <code>index.html</code> that keeps our storyline continuous is the line 16, <code>&lt;div id=&quot;app&quot;&gt;&lt;/div&gt;</code>. It inserts a div with id <code>app</code> in the html body. Let's remember this line and keep on moving.</p>
+<h2 id="3-mainjs">3. <code>main.js</code></h2>
+<p>This file is a goodbye to <code>electron</code> and hello to <code>vue.js</code>. The file imports the <code>vue</code> and its plugins, declears a <code>vue instance</code> and mounts it to the div with id of <code>app</code>. Remember it? the div in the <code>index.html</code>.<br>
+The file also import a file named <code>App.vue</code> which is the fundmental vue component that every components and views you build later on will add onto it.</p>
+<p>Let's wrap it up. <code>Electron</code> uses the <code>background.js</code> to tell the OS what kind of windows your app will initialize. The <code>background.js</code> tells the OS that whatever in that <code>index.html</code> will be shown in its main window. The <code>index.html</code> says that it has a div named <code>app</code> in its body that will be rendered by the <code>main.js</code>. The <code>main.js</code> says it will use <code>vue</code> and its little minions <code>router</code>, <code>store</code> and <code>vuetify</code> to help render the component named <code>App</code> and that is what <code>index.html</code> will get.</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#1-backgroundjs">1. <code>background.js</code></a></li>
+<li><a href="#2-indexhtml">2. <code>index.html</code></a></li>
+<li><a href="#3-mainjs">3. <code>main.js</code></a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://yuanzh0u.github.io/post/day2-modify-electron-initial-setup/">
+              <h3 class="post-title">
+                Day#2 Modify Electron Initial Setup for Vue.js Development
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://yuanzh0u.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
