@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Day#3 electron_vue &amp; vuetify Initial File Structure part 1 | yuanZh0u</title>
-<link rel="shortcut icon" href="https://yuanzh0u.github.io/favicon.ico?v=1582295843349">
+<link rel="shortcut icon" href="https://yuanzh0u.github.io/favicon.ico?v=1582295976652">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://yuanzh0u.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="Day#3 electron_vue &amp; vuetify Initial File Structure part 1 | yuanZh0u - Atom Feed" href="https://yuanzh0u.github.io/atom.xml">
@@ -22,7 +22,7 @@ After the project is initialized by the electron_vue and vuetify, the project fo
       <div class="main-content">
         <div class="site-header">
   <a href="https://yuanzh0u.github.io">
-  <img class="avatar" src="https://yuanzh0u.github.io/images/avatar.png?v=1582295843349" alt="">
+  <img class="avatar" src="https://yuanzh0u.github.io/images/avatar.png?v=1582295976652" alt="">
   </a>
   <h1 class="site-title">
     yuanZh0u
@@ -102,7 +102,7 @@ After the project is initialized by the electron_vue and vuetify, the project fo
             <div class="post-content-wrapper">
               <div class="post-content">
                 <p><img src="https://raw.githubusercontent.com/yuanzh0u/Imgbed_picgo/master/20200221153559.png" alt="initial file structure after electron_vue is setup" loading="lazy"><br>
-After the project is initialized by the electron_vue and vuetify, the project folder would be looked like the above picture. Everthing you need for coding is store in the folder named <code>src</code> as short for &quot;source code&quot;. The rest files and folders are used for compiling and buiding stuff, which will be discussed later.<br>
+After the project is initialized by the electron_vue and vuetify, the project folder would be looked like the above picture. Everthing you need for coding is stored in the folder named <code>src</code> as short for &quot;source code&quot;. The rest files and folders are used for compiling and buiding stuff, which will be discussed later.<br>
 <img src="https://raw.githubusercontent.com/yuanzh0u/Imgbed_picgo/master/20200221161119.png" alt="" loading="lazy"><br>
 In the folder <code>scr</code>, <code>electron_vue</code> and <code>vuetify</code> have already created several files and folders for you. They seems intimidating. But don't worry. Once you get the gist of the <code>electron a nd vue</code> framework, you will understand that they are only there to do some dirty underground construction work for you and help you to keep your codes clean.<br>
 So here is the basic story line:</p>
@@ -165,6 +165,7 @@ The only important thing in the codes of <code>index.html</code> that keeps our 
 <h2 id="3-mainjs">3. <code>main.js</code></h2>
 <p>This file is a goodbye to <code>electron</code> and hello to <code>vue.js</code>. The file imports the <code>vue</code> and its plugins, declears a <code>vue instance</code> and mounts it to the div with id of <code>app</code>. Remember it? the div in the <code>index.html</code>.<br>
 The file also import a file named <code>App.vue</code> which is the fundmental vue component that every components and views you build later on will add onto it.</p>
+<h2 id="conclusion">conclusion</h2>
 <p>Let's wrap it up. <code>Electron</code> uses the <code>background.js</code> to tell the OS what kind of windows your app will initialize. The <code>background.js</code> tells the OS that whatever in that <code>index.html</code> will be shown in its main window. The <code>index.html</code> says that it has a div named <code>app</code> in its body that will be rendered by the <code>main.js</code>. The <code>main.js</code> says it will use <code>vue</code> and its little minions <code>router</code>, <code>store</code> and <code>vuetify</code> to help render the component named <code>App</code> and that is what <code>index.html</code> will get.</p>
 
               </div>
@@ -175,6 +176,7 @@ The file also import a file named <code>App.vue</code> which is the fundmental v
 <li><a href="#1-backgroundjs">1. <code>background.js</code></a></li>
 <li><a href="#2-indexhtml">2. <code>index.html</code></a></li>
 <li><a href="#3-mainjs">3. <code>main.js</code></a></li>
+<li><a href="#conclusion">conclusion</a></li>
 </ul>
 </li>
 </ul>
