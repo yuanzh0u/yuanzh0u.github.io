@@ -1,0 +1,199 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Day#4 Initial File Structure part 2 | yuanZh0u</title>
+<link rel="shortcut icon" href="https://yuanzh0u.github.io/favicon.ico?v=1582358320578">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://yuanzh0u.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Day#4 Initial File Structure part 2 | yuanZh0u - Atom Feed" href="https://yuanzh0u.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="The contributes of electron_vue to the inital app was explained, and the functionality of four resource code files, back..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://yuanzh0u.github.io">
+  <img class="avatar" src="https://yuanzh0u.github.io/images/avatar.png?v=1582358320578" alt="">
+  </a>
+  <h1 class="site-title">
+    yuanZh0u
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          Home
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          Archives
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          Tags
+        </a>
+      
+    
+      
+        <a href="https://yuanzh0u.github.io/post/dev-logs" class="menu">
+          DEV
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Day#4 Initial File Structure part 2
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-02-22
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>The contributes of <code>electron_vue</code> to the inital app was explained, and the functionality of four resource code files, <code>background.js</code>, <code>index.html</code>, <code>main.js</code> and <code>App.vue</code>, are discussed in the previous blog. Now, let's take a look at the stories of the rest of the file structure built in advance,  the <strong>six folders</strong>: <code>assets</code>, <code>components</code>, <code>plugins</code>, <code>router</code>, <code>store</code> and <code>view</code>.</p>
+<!-- more -->
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/yuanzh0u/Imgbed_picgo/master/20200221161119.png" alt="Initial File Structure" loading="lazy"></figure>
+<h2 id="1-assets">1. <code>assets</code></h2>
+<p>The <code>assets</code> folder is where to place the <strong>&quot;static resource&quot;</strong> of your project, such as icons, images, json files, and etc.</p>
+<h2 id="2-components-and-view">2. <code>components</code> and <code>view</code></h2>
+<p>The <code>components</code> and <code>view</code> folders are where to contain <code>.vue</code> files, a.k.a the <strong><a href="https://vuejs.org/v2/guide/#Composing-with-Components">VUE components</a></strong>. The key difference is that some VUE components act as Views for routing with <strong><a href="https://vuejs.org/v2/guide/routing.html">VUE Router</a></strong> . The components located under <code>src/components</code> are less likely to be used in a route whereas components located under <code>src/views</code> will be used by  at least one route.</p>
+<h2 id="3-plugins">3. <code>plugins</code></h2>
+<p>The <code>src/plugins/</code> folder is straight forward. It imports the plugins used in the project and registers them to the <code>Vue</code> instance decleared in the <code>main.js</code> with a <code>.js</code> file.</p>
+<pre><code class="language-javascript">// this is the file generate automatically 
+//if you install the vuetify plugin to the project
+import Vue from 'vue';
+import Vuetify from 'vuetify/lib';// import Vuetify plugin
+
+Vue.use(Vuetify);// registers the Vuetify to Vue instance declear in the main.js
+
+export default new Vuetify({
+});
+</code></pre>
+<h2 id="4-router">4. <code>router</code></h2>
+<p>The <code>src/router/</code> folder is where to places the <code>.js</code> file that registers the <code>VueRouter</code> plugin to the <code>Vue</code> instance and view components to the corresponding urls. This plugin is not alway nessesary, especially during the development of a SPA (Single Page Application) project.</p>
+<h2 id="5-store">5. <code>store</code></h2>
+<p>The <code>src/store/</code> folder is where to places the <code>.js</code> file that registers the <code>Vuex</code> plugin to the <code>Vue</code> instance and store the data or functions that could be interacted with all the components you build in the vue framework.</p>
+<p>More details of <code>router</code> and <code>store</code> will be elaborate in the following blogs when we dig deeper in this &quot;DEV&quot; project.</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#1-assets">1. <code>assets</code></a></li>
+<li><a href="#2-components-and-view">2. <code>components</code> and <code>view</code></a></li>
+<li><a href="#3-plugins">3. <code>plugins</code></a></li>
+<li><a href="#4-router">4. <code>router</code></a></li>
+<li><a href="#5-store">5. <code>store</code></a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://yuanzh0u.github.io/post/day3-electron_vue-startup/">
+              <h3 class="post-title">
+                Day#3 Initial File Structure part 1
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://yuanzh0u.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuanzh0u.github.io</id>
     <title>yuanZh0u</title>
-    <updated>2020-02-22T07:36:26.332Z</updated>
+    <updated>2020-02-22T07:58:42.765Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuanzh0u.github.io"/>
     <link rel="self" href="https://yuanzh0u.github.io/atom.xml"/>
@@ -10,6 +10,40 @@
     <logo>https://yuanzh0u.github.io/images/avatar.png</logo>
     <icon>https://yuanzh0u.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, yuanZh0u</rights>
+    <entry>
+        <title type="html"><![CDATA[Day#4 Initial File Structure part 2]]></title>
+        <id>https://yuanzh0u.github.io/post/day4-initial-file-structure-part-2/</id>
+        <link href="https://yuanzh0u.github.io/post/day4-initial-file-structure-part-2/">
+        </link>
+        <updated>2020-02-22T04:58:48.000Z</updated>
+        <summary type="html"><![CDATA[<p>The contributes of <code>electron_vue</code> to the inital app was explained, and the functionality of four resource code files, <code>background.js</code>, <code>index.html</code>, <code>main.js</code> and <code>App.vue</code>, are discussed in the previous blog. Now, let's take a look at the stories of the rest of the file structure built in advance,  the <strong>six folders</strong>: <code>assets</code>, <code>components</code>, <code>plugins</code>, <code>router</code>, <code>store</code> and <code>view</code>.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>The contributes of <code>electron_vue</code> to the inital app was explained, and the functionality of four resource code files, <code>background.js</code>, <code>index.html</code>, <code>main.js</code> and <code>App.vue</code>, are discussed in the previous blog. Now, let's take a look at the stories of the rest of the file structure built in advance,  the <strong>six folders</strong>: <code>assets</code>, <code>components</code>, <code>plugins</code>, <code>router</code>, <code>store</code> and <code>view</code>.</p>
+<!-- more -->
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/yuanzh0u/Imgbed_picgo/master/20200221161119.png" alt="Initial File Structure" loading="lazy"></figure>
+<h2 id="1-assets">1. <code>assets</code></h2>
+<p>The <code>assets</code> folder is where to place the <strong>&quot;static resource&quot;</strong> of your project, such as icons, images, json files, and etc.</p>
+<h2 id="2-components-and-view">2. <code>components</code> and <code>view</code></h2>
+<p>The <code>components</code> and <code>view</code> folders are where to contain <code>.vue</code> files, a.k.a the <strong><a href="https://vuejs.org/v2/guide/#Composing-with-Components">VUE components</a></strong>. The key difference is that some VUE components act as Views for routing with <strong><a href="https://vuejs.org/v2/guide/routing.html">VUE Router</a></strong> . The components located under <code>src/components</code> are less likely to be used in a route whereas components located under <code>src/views</code> will be used by  at least one route.</p>
+<h2 id="3-plugins">3. <code>plugins</code></h2>
+<p>The <code>src/plugins/</code> folder is straight forward. It imports the plugins used in the project and registers them to the <code>Vue</code> instance decleared in the <code>main.js</code> with a <code>.js</code> file.</p>
+<pre><code class="language-javascript">// this is the file generate automatically 
+//if you install the vuetify plugin to the project
+import Vue from 'vue';
+import Vuetify from 'vuetify/lib';// import Vuetify plugin
+
+Vue.use(Vuetify);// registers the Vuetify to Vue instance declear in the main.js
+
+export default new Vuetify({
+});
+</code></pre>
+<h2 id="4-router">4. <code>router</code></h2>
+<p>The <code>src/router/</code> folder is where to places the <code>.js</code> file that registers the <code>VueRouter</code> plugin to the <code>Vue</code> instance and view components to the corresponding urls. This plugin is not alway nessesary, especially during the development of a SPA (Single Page Application) project.</p>
+<h2 id="5-store">5. <code>store</code></h2>
+<p>The <code>src/store/</code> folder is where to places the <code>.js</code> file that registers the <code>Vuex</code> plugin to the <code>Vue</code> instance and store the data or functions that could be interacted with all the components you build in the vue framework.</p>
+<p>More details of <code>router</code> and <code>store</code> will be elaborate in the following blogs when we dig deeper in this &quot;DEV&quot; project.</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Day#3 Initial File Structure part 1]]></title>
         <id>https://yuanzh0u.github.io/post/day3-electron_vue-startup/</id>
