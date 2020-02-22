@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Day#2 Modify Initial Setup of Electron | yuanZh0u</title>
-<link rel="shortcut icon" href="https://yuanzh0u.github.io/favicon.ico?v=1582355741542">
+<link rel="shortcut icon" href="https://yuanzh0u.github.io/favicon.ico?v=1582356983719">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://yuanzh0u.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="Day#2 Modify Initial Setup of Electron | yuanZh0u - Atom Feed" href="https://yuanzh0u.github.io/atom.xml">
@@ -22,7 +22,7 @@ When the project is setup by the electron-builder (a vue plugin), the initial se
       <div class="main-content">
         <div class="site-header">
   <a href="https://yuanzh0u.github.io">
-  <img class="avatar" src="https://yuanzh0u.github.io/images/avatar.png?v=1582355741542" alt="">
+  <img class="avatar" src="https://yuanzh0u.github.io/images/avatar.png?v=1582356983719" alt="">
   </a>
   <h1 class="site-title">
     yuanZh0u
@@ -34,25 +34,25 @@ When the project is setup by the electron-builder (a vue plugin), the initial se
     
       
         <a href="/" class="menu">
-          首页
+          Home
         </a>
       
     
       
         <a href="/archives" class="menu">
-          归档
+          Archives
         </a>
       
     
       
         <a href="/tags" class="menu">
-          标签
+          Tags
         </a>
       
     
       
         <a href="https://yuanzh0u.github.io/post/dev-logs" class="menu">
-          DEV Log
+          DEV
         </a>
       
     
@@ -98,8 +98,9 @@ When the project is setup by the electron-builder (a vue plugin), the initial se
             <div class="post-content-wrapper">
               <div class="post-content">
                 <h2 id="remove-the-menu-bar">Remove the Menu Bar</h2>
-<p>When the project is setup by the <code>electron-builder</code> (a vue plugin), the initial settings of the electron window layout was put into the <code>background.js</code> at the root of the project folder.<br>
-The main window of the app is given to an object named <code>win</code> at <code>line 19</code> by declearing an instance of BrowserWindow in the function of <code>createWindow(){}</code>.</p>
+<p>When the project is setup by the <code>electron-builder</code> (a vue plugin), the initial settings of the electron window layout was put into the <code>background.js</code> at the root of the project folder.</p>
+<!-- more -->
+<p>The main window of the app is given to an object named <code>win</code> at <code>line 19</code> by declearing an instance of BrowserWindow in the function of <code>createWindow(){}</code>.</p>
 <pre><code class="language-javascript">function createWindow() { 
     win = new BrowserWindow({ width: 800, height: 600, webPreferences: {
         nodeIntegration: true
