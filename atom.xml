@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuanzh0u.github.io</id>
     <title>yuanZh0u</title>
-    <updated>2020-02-21T14:39:38.726Z</updated>
+    <updated>2020-02-22T03:19:17.062Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuanzh0u.github.io"/>
     <link rel="self" href="https://yuanzh0u.github.io/atom.xml"/>
@@ -22,7 +22,7 @@ After the project is initialized by the electron_vue and vuetify, the project fo
 In the folder <code>scr</code>, <code>electron_vue</code> and <code>vuetify</code> have already created several files and folders for you. They seems intimidating. But don't worry. Once you get the gist of the <code>electron a nd vue</code> framework, you will understand that they are only there to do some dirty underground construction work for you and help you to keep your codes clean.<br>
 So here is the basic story line:</p>
 <h2 id="1-backgroundjs">1. <code>background.js</code></h2>
-<p><code>electron_vue</code> created a <code>background.js</code> file by which imports some basic tools from <code>electron</code> to render the app window for you. The main process of the app is run with the <code>background.js</code>. The file basically defines a main window of the app named <code>win</code>, and the actions to take when the app is <code>activate</code>, <code>ready</code> and <code>all the windows are closed</code>.</p>
+<p><code>electron_vue</code> created a <code>background.js</code> file by which imported some basic tools from <code>electron</code> to render the app window for you. The main process of the app is run with the <code>background.js</code>. The file basically defines a main window of the app named <code>win</code>, and the actions to take when the app is <code>activate</code>, <code>ready</code> and <code>all the windows are closed</code>.</p>
 <ul>
 <li><code>activate</code> is used only for macOS when the dock icon is clicked and no other windows of app are open.<pre><code class="language-javascript">  app.on('activate', () =&gt; {
       if (win === null) {
@@ -80,8 +80,56 @@ The only important thing in the codes of <code>index.html</code> that keeps our 
 <h2 id="3-mainjs">3. <code>main.js</code></h2>
 <p>This file is a goodbye to <code>electron</code> and hello to <code>vue.js</code>. The file imports the <code>vue</code> and its plugins, declears a <code>vue instance</code> and mounts it to the div with id of <code>app</code>. Remember it? the div in the <code>index.html</code>.<br>
 The file also import a file named <code>App.vue</code> which is the fundmental vue component that every components and views you build later on will add onto it.</p>
-<h2 id="conclusion">conclusion</h2>
-<p>Let's wrap it up. <code>Electron</code> uses the <code>background.js</code> to tell the OS what kind of windows your app will initialize. The <code>background.js</code> tells the OS that whatever in that <code>index.html</code> will be shown in its main window. The <code>index.html</code> says that it has a div named <code>app</code> in its body that will be rendered by the <code>main.js</code>. The <code>main.js</code> says it will use <code>vue</code> and its little minions <code>router</code>, <code>store</code> and <code>vuetify</code> to help render the component named <code>App</code> and that is what <code>index.html</code> will get.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Let's wrap it up. <code>Electron</code> uses the <code>background.js</code> to tell the OS what kind of windows your app will initialize. The <code>background.js</code> tells the OS that whatever in that <code>index.html</code> will be shown in its main window. The <code>index.html</code> displays a div named <code>app</code> in its body rendered by the <code>main.js</code>. The <code>main.js</code> uses <code>vue</code> and its little minions <code>router</code>, <code>store</code> and <code>vuetify</code> to render the component named <code>App</code> and that is what <code>index.html</code> will get.</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[VSCode Shortcuts & Extensions]]></title>
+        <id>https://yuanzh0u.github.io/post/vscode-intro/</id>
+        <link href="https://yuanzh0u.github.io/post/vscode-intro/">
+        </link>
+        <updated>2020-02-20T12:12:41.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="what-is-vscode">What is VSCode</h2>
+<p><a href="https://code.visualstudio.com/">VSCode</a> is short for Visual Studio Code, which is brought by Microsoft and developed based on Electron and Javascript. It is a lightweight source code eidtor which could run on desktop with Windows, macOS and Linux OS systems. It could become a powerful IDE( Integrated Development Environment) tool with few pulgins (or extensions).<br>
+And most important, it is free.</p>
+<h2 id="top-10-keyboard-shortcuts">Top 10 Keyboard Shortcuts</h2>
+<ol>
+<li><code>Ctrl + Shift + P</code> or <code>F1</code> Open the command panel</li>
+<li><code>Ctrl + P</code> Open the recent files, <code>Ctrl + Tab</code> switch among opened files.</li>
+<li><code>Ctrl + Backspace</code> Delete previous word</li>
+<li><code>Alt+ up/down</code> Move line up/down</li>
+<li><code>Ctrl + Shift + D</code> Duplicate line</li>
+<li><code>Ctrl + Shift + K</code> Delete line</li>
+<li><code>Ctrl + [ or ]</code> Indent or outdent line</li>
+<li><code>Ctrl + Shift + L</code> Select all occurrences of the current selection</li>
+<li><code>Alt + Click</code> Multi lines select</li>
+<li><code>Alt + Shift + Click</code> Multi column select</li>
+</ol>
+<h2 id="top-extensions-for-visual">Top Extensions for visual</h2>
+<ol>
+<li>Material Theme / Material Icon Theme</li>
+<li>Bracket Pair Colorizer 2</li>
+<li>indent-rainbow</li>
+<li>Prettier &gt;useful feature:<code>Format on Save</code></li>
+<li>Auto Rename Tag</li>
+</ol>
+<h2 id="top-extensions-for-python">Top Extensions for Python</h2>
+<ol>
+<li>Python</li>
+<li>Python for VSCode</li>
+<li>Python Indent</li>
+<li>autoDocstring</li>
+<li>MagicPython</li>
+</ol>
+<h2 id="top-extensions-for-web-coding">Top Extensions for Web Coding</h2>
+<ol>
+<li>REST Client ( test backend api )</li>
+<li>Live Server (test frontend html )</li>
+<li>Vetur (VS coding tools for Vue.js )</li>
+<li>Remote Development</li>
+<li>Docker</li>
+</ol>
 ]]></content>
     </entry>
     <entry>
