@@ -2,17 +2,16 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Day#3 electron_vue &amp; vuetify Initial File Structure part 1 | yuanZh0u</title>
-<link rel="shortcut icon" href="https://yuanzh0u.github.io/favicon.ico?v=1582341549963">
+<title>Day#3 Initial File Structure part 1 | yuanZh0u</title>
+<link rel="shortcut icon" href="https://yuanzh0u.github.io/favicon.ico?v=1582343884958">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://yuanzh0u.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Day#3 electron_vue &amp; vuetify Initial File Structure part 1 | yuanZh0u - Atom Feed" href="https://yuanzh0u.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="Day#3 Initial File Structure part 1 | yuanZh0u - Atom Feed" href="https://yuanzh0u.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="
-After the project is initialized by the electron_vue and vuetify, the project folder would be looked like the above pic..." />
+    <meta name="description" content="This part will discuss the file structure that initialized by the vue.js and electron_vue plugin, and explain how the el..." />
     <meta name="keywords" content="vuetify,electron,vue.js" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -22,7 +21,7 @@ After the project is initialized by the electron_vue and vuetify, the project fo
       <div class="main-content">
         <div class="site-header">
   <a href="https://yuanzh0u.github.io">
-  <img class="avatar" src="https://yuanzh0u.github.io/images/avatar.png?v=1582341549963" alt="">
+  <img class="avatar" src="https://yuanzh0u.github.io/images/avatar.png?v=1582343884958" alt="">
   </a>
   <h1 class="site-title">
     yuanZh0u
@@ -50,12 +49,6 @@ After the project is initialized by the electron_vue and vuetify, the project fo
         </a>
       
     
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
   </div>
   <div class="social-container">
     
@@ -75,7 +68,7 @@ After the project is initialized by the electron_vue and vuetify, the project fo
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Day#3 electron_vue &amp; vuetify Initial File Structure part 1
+              Day#3 Initial File Structure part 1
             </h2>
             <div class="post-info">
               <span>
@@ -101,13 +94,15 @@ After the project is initialized by the electron_vue and vuetify, the project fo
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p><img src="https://raw.githubusercontent.com/yuanzh0u/Imgbed_picgo/master/20200221153559.png" alt="initial file structure after electron_vue is setup" loading="lazy"><br>
+                <p>This part will discuss the file structure that initialized by the <code>vue.js</code> and <code>electron_vue</code> plugin, and explain how the <code>electron_vue</code> bundles the <code>electron</code>, <code>html</code>, <code>javascript</code> and <code>vue.js</code> and let them working together.</p>
+<!-- more -->
+<p><img src="https://raw.githubusercontent.com/yuanzh0u/Imgbed_picgo/master/20200221153559.png" alt="initial file structure after electron_vue is setup" loading="lazy"><br>
 After the project is initialized by the electron_vue and vuetify, the project folder would be looked like the above picture. Everthing you need for coding is stored in the folder named <code>src</code> as short for &quot;source code&quot;. The rest files and folders are used for compiling and buiding stuff, which will be discussed later.<br>
 <img src="https://raw.githubusercontent.com/yuanzh0u/Imgbed_picgo/master/20200221161119.png" alt="" loading="lazy"><br>
-In the folder <code>scr</code>, <code>electron_vue</code> and <code>vuetify</code> have already created several files and folders for you. They seems intimidating. But don't worry. Once you get the gist of the <code>electron a nd vue</code> framework, you will understand that they are only there to do some dirty underground construction work for you and help you to keep your codes clean.<br>
+In the folder <code>scr</code>, <code>electron_vue</code> and <code>vuetify</code> have already created several files and folders for you. They seems intimidating. But don't worry. Once you get the gist of the ``electron<code>and</code>vue` framework, you will understand that they are only there to do some dirty underground construction work for you and help you to keep your codes clean.<br>
 So here is the basic story line:</p>
 <h2 id="1-backgroundjs">1. <code>background.js</code></h2>
-<p><code>electron_vue</code> created a <code>background.js</code> file by which imported some basic tools from <code>electron</code> to render the app window for you. The main process of the app is run with the <code>background.js</code>. The file basically defines a main window of the app named <code>win</code>, and the actions to take when the app is <code>activate</code>, <code>ready</code> and <code>all the windows are closed</code>.</p>
+<p><code>electron_vue</code> created a <code>background.js</code> file by which some basic tools from <code>electron</code> are imported to render the app main window for you for now. The main process of the app is run with the <code>background.js</code>. The file basically defines a main window of the app named <code>win</code>, and the actions to take when the app is <code>activate</code>, <code>ready</code> and <code>all the windows are closed</code>.</p>
 <ul>
 <li><code>activate</code> is used only for macOS when the dock icon is clicked and no other windows of app are open.<pre><code class="language-javascript">  app.on('activate', () =&gt; {
       if (win === null) {
