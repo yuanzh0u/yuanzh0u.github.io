@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuanzh0u.github.io</id>
     <title>yuanZh0u</title>
-    <updated>2020-02-22T03:58:09.852Z</updated>
+    <updated>2020-02-22T07:15:43.745Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuanzh0u.github.io"/>
     <link rel="self" href="https://yuanzh0u.github.io/atom.xml"/>
@@ -10,6 +10,15 @@
     <logo>https://yuanzh0u.github.io/images/avatar.png</logo>
     <icon>https://yuanzh0u.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, yuanZh0u</rights>
+    <entry>
+        <title type="html"><![CDATA[DEV LOGS]]></title>
+        <id>https://yuanzh0u.github.io/post/dev-logs/</id>
+        <link href="https://yuanzh0u.github.io/post/dev-logs/">
+        </link>
+        <updated>2020-02-22T07:14:16.000Z</updated>
+        <content type="html"><![CDATA[<p><a href="day1-electron_vue-installation">Day#1 Electron_Vue Installation</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Day#3 Initial File Structure part 1]]></title>
         <id>https://yuanzh0u.github.io/post/day3-electron_vue-startup/</id>
@@ -108,7 +117,8 @@ And most important, it is free.</p>
 <li><code>Ctrl + [ or ]</code> Indent or outdent line</li>
 <li><code>Ctrl + Shift + L</code> Select all occurrences of the current selection</li>
 <li><code>Alt + Click</code> Multi lines select</li>
-<li><code>Alt + Shift + Click</code> Multi column select</li>
+<li><code>Alt + Shift + Click</code> Multi column select<br>
+<img src="https://raw.githubusercontent.com/yuanzh0u/Imgbed_picgo/master/20200222134050.png" alt="Keyboard Shortcuts Sheet of VSCode for Window Users" loading="lazy"></li>
 </ol>
 <h2 id="top-extensions-for-visual">Top Extensions for visual</h2>
 <ol>
