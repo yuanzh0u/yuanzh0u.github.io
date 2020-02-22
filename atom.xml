@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuanzh0u.github.io</id>
     <title>yuanZh0u</title>
-    <updated>2020-02-22T07:58:42.765Z</updated>
+    <updated>2020-02-22T08:29:25.500Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuanzh0u.github.io"/>
     <link rel="self" href="https://yuanzh0u.github.io/atom.xml"/>
@@ -16,9 +16,9 @@
         <link href="https://yuanzh0u.github.io/post/day4-initial-file-structure-part-2/">
         </link>
         <updated>2020-02-22T04:58:48.000Z</updated>
-        <summary type="html"><![CDATA[<p>The contributes of <code>electron_vue</code> to the inital app was explained, and the functionality of four resource code files, <code>background.js</code>, <code>index.html</code>, <code>main.js</code> and <code>App.vue</code>, are discussed in the previous blog. Now, let's take a look at the stories of the rest of the file structure built in advance,  the <strong>six folders</strong>: <code>assets</code>, <code>components</code>, <code>plugins</code>, <code>router</code>, <code>store</code> and <code>view</code>.</p>
+        <summary type="html"><![CDATA[<p>In the previous blog, it explained the contributes of <code>electron_vue</code> to the inital app, and discussed the functionality of four resource code files, <code>background.js</code>, <code>index.html</code>, <code>main.js</code> and <code>App.vue</code>. Now, let's take a look at the stories of the rest of the file structure built in advance,  the <strong>six folders</strong>: <code>assets</code>, <code>components</code>, <code>plugins</code>, <code>router</code>, <code>store</code> and <code>view</code>.</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>The contributes of <code>electron_vue</code> to the inital app was explained, and the functionality of four resource code files, <code>background.js</code>, <code>index.html</code>, <code>main.js</code> and <code>App.vue</code>, are discussed in the previous blog. Now, let's take a look at the stories of the rest of the file structure built in advance,  the <strong>six folders</strong>: <code>assets</code>, <code>components</code>, <code>plugins</code>, <code>router</code>, <code>store</code> and <code>view</code>.</p>
+        <content type="html"><![CDATA[<p>In the previous blog, it explained the contributes of <code>electron_vue</code> to the inital app, and discussed the functionality of four resource code files, <code>background.js</code>, <code>index.html</code>, <code>main.js</code> and <code>App.vue</code>. Now, let's take a look at the stories of the rest of the file structure built in advance,  the <strong>six folders</strong>: <code>assets</code>, <code>components</code>, <code>plugins</code>, <code>router</code>, <code>store</code> and <code>view</code>.</p>
 <!-- more -->
 <figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/yuanzh0u/Imgbed_picgo/master/20200221161119.png" alt="Initial File Structure" loading="lazy"></figure>
 <h2 id="1-assets">1. <code>assets</code></h2>
