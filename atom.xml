@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yuanzh0u.github.io</id>
     <title>yuanZh0u</title>
-    <updated>2020-02-22T08:30:53.820Z</updated>
+    <updated>2020-02-22T16:02:54.751Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yuanzh0u.github.io"/>
     <link rel="self" href="https://yuanzh0u.github.io/atom.xml"/>
@@ -10,6 +10,249 @@
     <logo>https://yuanzh0u.github.io/images/avatar.png</logo>
     <icon>https://yuanzh0u.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, yuanZh0u</rights>
+    <entry>
+        <title type="html"><![CDATA[Markdown Syntax]]></title>
+        <id>https://yuanzh0u.github.io/post/markdown-syntax/</id>
+        <link href="https://yuanzh0u.github.io/post/markdown-syntax/">
+        </link>
+        <updated>2020-02-22T15:37:14.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="1-title">1. TITLE</h2>
+<p>code:</p>
+<pre><code class="language-markdown"># level 1
+## level 2
+### level 3
+#### level 4
+##### level 5
+###### level 6
+</code></pre>
+<p>example:</p>
+<blockquote>
+<h1 id="level-1">level 1</h1>
+<h2 id="level-2">level 2</h2>
+<h3 id="level-3">level 3</h3>
+<h4 id="level-4">level 4</h4>
+<h5 id="level-5">level 5</h5>
+<h6 id="level-6">level 6</h6>
+</blockquote>
+<h2 id="2-font">2. FONT</h2>
+<p><strong>code:</strong></p>
+<pre><code class="language-markdown">**bold**
+*italic*
+***bold and italic***
+~~strikethrough~~
+</code></pre>
+<p><strong>example:</strong><br>
+<strong>bold</strong><br>
+<em>italic</em><br>
+<em><strong>bold and italic</strong></em><br>
+<s>strikethrough</s></p>
+<h2 id="3-quotation">3. QUOTATION</h2>
+<p><strong>code:</strong></p>
+<pre><code class="language-markdown">&gt;quote
+&gt;&gt;quote
+</code></pre>
+<p><strong>example:</strong></p>
+<blockquote>
+<p>quote</p>
+<blockquote>
+<p>quote</p>
+</blockquote>
+</blockquote>
+<h2 id="4-seperator">4. SEPERATOR</h2>
+<p><strong>code:</strong></p>
+<pre><code class="language-markdown">---
+----
+***
+*****
+</code></pre>
+<h2 id="example"><strong>example:</strong></h2>
+<hr>
+<hr>
+<hr>
+<h2 id="5-hyperlink">5. HYPERLINK</h2>
+<p><strong>code:</strong></p>
+<pre><code class="language-markdown">[baidu](www.baidu.com)
+![baidu](https://www.baidu.com/img/bd_logo1.png?where=super)
+</code></pre>
+<p><strong>example:</strong><br>
+<a href="www.baidu.com">baidu</a><br>
+<img src="https://www.baidu.com/img/bd_logo1.png?where=super" alt="baidu" loading="lazy"></p>
+<h2 id="6-list">6. LIST</h2>
+<p><strong>code:</strong></p>
+<pre><code class="language-markdown">- list 1
+   1. list 1.1
+      1. list 1.1.1
+   2. list 1.2
+   3. list 1.3
++ list 2
+* list 3
+</code></pre>
+<p><strong>example:</strong></p>
+<ul>
+<li>list 1
+<ol>
+<li>list 1.1
+<ol>
+<li>list 1.1.1</li>
+</ol>
+</li>
+<li>list 1.2</li>
+<li>list 1.3</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>list 2</li>
+</ul>
+<ul>
+<li>list 3</li>
+</ul>
+<h2 id="7-form">7. FORM</h2>
+<p><strong>code:</strong></p>
+<pre><code class="language-markdown">name|title|number
+---|:--:|---:
+John|CEO|1234567
+Peter|CTO|9877321
+</code></pre>
+<p><strong>example:</strong></p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th style="text-align:center">title</th>
+<th style="text-align:right">number</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>John</td>
+<td style="text-align:center">CEO</td>
+<td style="text-align:right">1234567</td>
+</tr>
+<tr>
+<td>Peter</td>
+<td style="text-align:center">CTO</td>
+<td style="text-align:right">9877321</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-code">8. CODE</h2>
+<p><strong>code:</strong></p>
+<pre><code class="language-markdown">`one line code`
+\```
+multi-line
+code
+\```
+</code></pre>
+<p><strong>example:</strong><br>
+<code>one line code</code></p>
+<pre><code class="language-markdown">multi-line
+code
+</code></pre>
+<h2 id="9-flowchart">9. FLOWCHART</h2>
+<p><strong>code:</strong></p>
+<pre><code class="language-markdown">st=&gt;start: Inputs
+op=&gt;operation: Some Operations
+cond=&gt;condition: Yes or No?
+e=&gt;end
+
+st-&gt;op-&gt;cond
+cond(yes)-&gt;e
+cond(no)-&gt;op
+</code></pre>
+<p><strong>example:</strong></p>
+<pre><code class="language-flow">st=&gt;start: Inputs
+op=&gt;operation: Some Operations
+cond=&gt;condition: Yes or No?
+e=&gt;end
+
+st-&gt;op-&gt;cond
+cond(yes)-&gt;e
+cond(no)-&gt;op
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Markdown]]></title>
+        <id>https://yuanzh0u.github.io/post/markdown/</id>
+        <link href="https://yuanzh0u.github.io/post/markdown/">
+        </link>
+        <updated>2020-02-22T15:37:14.000Z</updated>
+        <content type="html"><![CDATA[<p>Markdown Markups</p>
+<h2 id="1-title">1. TITLE</h2>
+<p>code:</p>
+<pre><code class="language-markdown"># level 1
+## level 2
+### level 3
+#### level 4
+##### level 5
+###### level 6
+</code></pre>
+<p>example:</p>
+<blockquote>
+<h1 id="level-1">level 1</h1>
+<h2 id="level-2">level 2</h2>
+<h3 id="level-3">level 3</h3>
+<h4 id="level-4">level 4</h4>
+<h5 id="level-5">level 5</h5>
+<h6 id="level-6">level 6</h6>
+</blockquote>
+<h2 id="2-font">2. FONT</h2>
+<p><strong>code:</strong></p>
+<pre><code class="language-markdown">**bold**
+*italic*
+***bold and italic***
+~~strikethrough~~
+</code></pre>
+<p><strong>example:</strong><br>
+<strong>bold</strong><br>
+<em>italic</em><br>
+<em><strong>bold and italic</strong></em><br>
+<s>strikethrough</s></p>
+<h2 id="3-quotation">3. QUOTATION</h2>
+<p><strong>code:</strong></p>
+<pre><code class="language-markdown">&gt;quote
+&gt;&gt;quote
+</code></pre>
+<p><strong>example:</strong></p>
+<blockquote>
+<p>quote</p>
+<blockquote>
+<p>quote</p>
+</blockquote>
+</blockquote>
+<h2 id="4-seperator">4. SEPERATOR</h2>
+<p><strong>code:</strong></p>
+<pre><code class="language-markdown">
+</code></pre>
+<p><strong>example:</strong></p>
+<h2 id="5-hyperlink">5. HYPERLINK</h2>
+<p><strong>code:</strong></p>
+<pre><code class="language-markdown">
+</code></pre>
+<p><strong>example:</strong></p>
+<h2 id="6-list">6. LIST</h2>
+<p><strong>code:</strong></p>
+<pre><code class="language-markdown">
+</code></pre>
+<p><strong>example:</strong></p>
+<h2 id="7-form">7. FORM</h2>
+<p><strong>code:</strong></p>
+<pre><code class="language-markdown">
+</code></pre>
+<p><strong>example:</strong></p>
+<h2 id="8-code">8. CODE</h2>
+<p><strong>code:</strong></p>
+<pre><code class="language-markdown">
+</code></pre>
+<p><strong>example:</strong></p>
+<h2 id="9-flowchart">9. FLOWCHART</h2>
+<p><strong>code:</strong></p>
+<pre><code class="language-markdown">
+</code></pre>
+<p><strong>example:</strong></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Day#4 Initial File Structure part 2]]></title>
         <id>https://yuanzh0u.github.io/post/day4-initial-file-structure-part-2/</id>
@@ -232,7 +475,7 @@ The scripts will be add to the callback function in <code>add.on('ready', functi
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Tutorial List for Beginners]]></title>
+        <title type="html"><![CDATA[Tutorial List]]></title>
         <id>https://yuanzh0u.github.io/post/tutorial-list-for-beginners/</id>
         <link href="https://yuanzh0u.github.io/post/tutorial-list-for-beginners/">
         </link>
